@@ -22,6 +22,7 @@ jobs:
           dara codegen java ./java
           dara codegen csharp ./csharp
           dara codegen python ./python
+          dara codegen python2 ./python2
           dara codegen go ./go
           dara codegen php ./php
           dara codegen ts ./ts
@@ -30,11 +31,13 @@ jobs:
       - name: Sample Build
         working-directory: ./sample
         run: |
+          cp -R ../sdk/libraries/ ./
           dara install darabonba:Util -S
           dara install alibabacloud:OpenApiUtil -S
           dara codegen java ./java
           dara codegen csharp ./csharp
           dara codegen python ./python
+          dara codegen python2 ./python2
           dara codegen go ./go
           dara codegen php ./php
           dara codegen ts ./ts
